@@ -7,7 +7,52 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'title',
-		'leeway'
+		'leeway',
+		'repeats'
 	],
 	#category : #StDia
 }
+
+{ #category : #initialization }
+DiaEvent >> initialize [ 
+	super initialize.
+	title := 'a Boring Event'.
+	leeway := 0.
+	^self.
+]
+
+{ #category : #accessing }
+DiaEvent >> leeway [
+
+	^ leeway
+]
+
+{ #category : #accessing }
+DiaEvent >> leeway: anObject [
+
+	leeway := anObject
+]
+
+{ #category : #accessing }
+DiaEvent >> repeats [
+
+	^ repeats
+]
+
+{ #category : #accessing }
+DiaEvent >> repeats: anObject [
+
+	repeats := anObject
+]
+
+{ #category : #accessing }
+DiaEvent >> title [
+
+	^ title
+]
+
+{ #category : #accessing }
+DiaEvent >> title: anObject [
+
+	title := anObject
+]
