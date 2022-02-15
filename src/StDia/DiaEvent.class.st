@@ -8,7 +8,8 @@ Class {
 	#instVars : [
 		'title',
 		'leeway',
-		'repeats'
+		'repeats',
+		'nextEvent'
 	],
 	#category : #StDia
 }
@@ -31,6 +32,12 @@ DiaEvent >> leeway [
 DiaEvent >> leeway: anObject [
 
 	leeway := anObject
+]
+
+{ #category : #accessing }
+DiaEvent >> nextEvent [
+
+^ nextEvent 
 ]
 
 { #category : #accessing }
