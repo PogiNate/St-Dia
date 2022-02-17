@@ -11,12 +11,30 @@ Class {
 	#category : #'StDia-Tests'
 }
 
-{ #category : #initialization }
+{ #category : #running }
 StDiaIntervalTest >> setUp [ 
 
 	super setUp. 
 	empty := DiaInterval new.
 	full := DiaInterval new repeats: 14; title: 'Do It Again!'.
 	
+	
+]
+
+{ #category : #tests }
+StDiaIntervalTest >> testCreationEmpty [
+"Make some assertions about an empty DiaInterval and ensure that it was created correctly."
+self
+	assert: empty title equals: 'a Boring Event';
+	assert: empty nextEvent equals: nil
+	
+]
+
+{ #category : #tests }
+StDiaIntervalTest >> testCreationFull [
+"Make some assertions about a DiaInterval that was created with all fields filled."
+self
+	assert: full title equals: 'Do It Again!';
+	assert: full nextEvent equals: (Date today addDays: 14).
 	
 ]

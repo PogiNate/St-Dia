@@ -10,7 +10,7 @@ Class {
 { #category : #'accessing - private' }
 DiaInterval >> createNextEvent [
 	"Creates the next event from today"
-	nextEvent := Date today + repeats asDays.
+	nextEvent := Date today addDays: repeats.
 	^nextEvent
 ]
 
@@ -19,4 +19,12 @@ DiaInterval >> initialize [
 	super initialize.
 	^self. "Don't think I need this line?"
 	
+]
+
+{ #category : #accessing }
+DiaInterval >> repeats: aNumber [
+"populates the 'repeats' variable and sets up the next event. Responds with the `nextEvent`."
+repeats := aNumber.
+self createNextEvent.
+^nextEvent.
 ]
