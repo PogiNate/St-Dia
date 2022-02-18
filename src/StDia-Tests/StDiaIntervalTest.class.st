@@ -21,6 +21,24 @@ StDiaIntervalTest >> setUp [
 	
 ]
 
+{ #category : #running }
+StDiaIntervalTest >> tearDown [ 
+full := nil.
+empty := nil.
+super tearDown.
+]
+
+{ #category : #tests }
+StDiaIntervalTest >> testCompleteEvent [
+	"Test the functionality of completing an event."
+	full setNextEvent: (Date today subtractDays: 12).
+	self assert: full nextEvent equals:(Date today subtractDays: 12).
+	full completeEvent.
+	self
+		"Full has an interval of 14 days, so this should work."
+		assert: full nextEvent equals: (Date today addDays: 14).
+]
+
 { #category : #tests }
 StDiaIntervalTest >> testCreationEmpty [
 "Make some assertions about an empty DiaInterval and ensure that it was created correctly."
