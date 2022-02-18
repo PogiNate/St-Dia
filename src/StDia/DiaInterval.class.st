@@ -29,6 +29,13 @@ DiaInterval >> initialize [
 	
 ]
 
+{ #category : #'accessing - private' }
+DiaInterval >> nextEvent: aDate [
+	"Sets the next instance of this repeating event manually."
+	nextEvent := aDate.
+	^ nextEvent.
+]
+
 { #category : #printing }
 DiaInterval >> printOn: aStream [
 	
@@ -56,5 +63,5 @@ self createNextEvent.
 DiaInterval >> setNextEvent: aDate [
 	"Sets the next instance of this repeating event manually."
 	nextEvent := aDate.
-	^ aDate.
+	^ nextEvent.
 ]

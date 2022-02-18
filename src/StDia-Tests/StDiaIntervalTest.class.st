@@ -31,7 +31,7 @@ super tearDown.
 { #category : #tests }
 StDiaIntervalTest >> testCompleteEvent [
 	"Test the functionality of completing an event."
-	full setNextEvent: (Date today subtractDays: 12).
+	full nextEvent: (Date today subtractDays: 12).
 	self assert: full nextEvent equals:(Date today subtractDays: 12).
 	full completeEvent.
 	self
@@ -44,7 +44,8 @@ StDiaIntervalTest >> testCreationEmpty [
 "Make some assertions about an empty DiaInterval and ensure that it was created correctly."
 self
 	assert: empty title equals: 'a Boring Event';
-	assert: empty nextEvent equals: nil
+	assert: empty nextEvent equals: nil;
+	assert: empty repeats equals: nil.
 	
 ]
 
