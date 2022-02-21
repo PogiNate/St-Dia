@@ -10,6 +10,20 @@ Class {
 	#category : #'StDia-Events'
 }
 
+{ #category : #'instance creation' }
+DiaDueDate class >> newWithTitle: aTitle onthe: anOrdinal ofEvery: anInterval [
+	"Create and return an instance of `DiaDueDate` populated with a `DueDatePattern`, all in one fell swoop!"
+	|aDueDate aPattern|
+	aDueDate := self class new.
+	aPattern := DueDatePattern new.
+	aPattern 
+		days: anOrdinal;
+		intervalType: anInterval.
+	aDueDate addPattern: aPattern.
+	^aDueDate.
+		
+]
+
 { #category : #adding }
 DiaDueDate >> addDueDate: aPattern [
 	"Add a Date object to the list of due Dates."

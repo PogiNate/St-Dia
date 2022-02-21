@@ -34,19 +34,6 @@ Class {
 	#category : #'StDia-Events'
 }
 
-{ #category : #'instance creation' }
-DueDatePattern class >> newPattern: aTitle every: aDate ofThe: anInterval [
-	"Create a new `DiaDueDate`, populate it with a `DueDatePattern` and return the DueDate after populating it."
-	|aPattern aDueDate|
-	aDueDate := DiaDueDate new.
-	aPattern := (self class new).
-	aPattern 
-		days: aDate;
-		intervalType: anInterval.
-	aDueDate addPattern: aPattern.
-	^aDueDate 
-]
-
 { #category : #accessing }
 DueDatePattern >> days [
 
