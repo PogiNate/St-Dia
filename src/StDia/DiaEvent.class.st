@@ -11,7 +11,7 @@ Class {
 		'repeats',
 		'nextEvent'
 	],
-	#category : #StDia
+	#category : #'StDia-Events'
 }
 
 { #category : #initialization }

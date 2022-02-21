@@ -4,7 +4,7 @@ A child of the `DiaEvent` class, a `DiaInterval` represents an event that can ha
 Class {
 	#name : #DiaInterval,
 	#superclass : #DiaEvent,
-	#category : #StDia
+	#category : #'StDia-Events'
 }
 
 { #category : #accessing }
@@ -40,12 +40,15 @@ DiaInterval >> nextEvent: aDate [
 DiaInterval >> printOn: aStream [
 	
 	aStream 
-		nextPutAll: 'a DiaEvent Object titled ';
+		nextPutAll: 'a DiaEvent. title: ';
 		print:self title;
-		nextPutAll: '. It repeats every ';
+		"nextPutAll: '\n';"
+		nextPutAll: 'Repeats: ';
 		print: self repeats;
-		nextPutAll: ' days, and will next come due on ';
+		nextPutAll: ' days, next due:  ';
 		print: self nextEvent;
+		nextPutAll: '. Leeway: ';
+		print: self leeway;
 		nextPutAll: '.'.	
 
 	^aStream 
@@ -57,11 +60,4 @@ DiaInterval >> repeats: aNumber [
 repeats := aNumber.
 self createNextEvent.
 ^nextEvent.
-]
-
-{ #category : #'accessing - private' }
-DiaInterval >> setNextEvent: aDate [
-	"Sets the next instance of this repeating event manually."
-	nextEvent := aDate.
-	^ nextEvent.
 ]
